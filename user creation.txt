@@ -1,0 +1,23 @@
+user creation 
+
+---
+- name: Creating users and copying files
+  hosts: test
+  tasks:
+   - name: Create a user
+     user:
+      name: chenna
+      password: "MTIzNDU2Cg=="
+      home: /home/chenna
+==============
+ echo '123456' |base64 
+"MTIzNDU2Cg==" 
+ echo 'MTIzNDU2Cg==' |base64 -d ===it shows passwd
+
+
+"MTIzNDU2Cg=="  =123456 ======encrypted
+
+login in user 
+ su - chenna
+enter passwd
+type bash enter
