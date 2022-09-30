@@ -1,0 +1,14 @@
+---
+- hosts: test
+  become: true
+  tasks:
+      - name: add several users
+        user:
+         name: "{{ item.name }}"
+         password: "{{ item.password }}"
+         state: absent
+        with_items:
+               - {name: testuser3,password: 123456}
+               - {name: testuser4,password: 654123}
+               - {name: testuser5,password: 987456}
+               - {name: testuser6,password: 541236}
